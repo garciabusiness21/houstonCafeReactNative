@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Card, Text, PricingCard } from 'react-native-elements';
+import { Icon, Card, Text, PricingCard, SocialIcon } from 'react-native-elements';
 import { StyleSheet, View, Button } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 //import Modal from "react-native-modal";
@@ -46,9 +46,10 @@ class HomeScreen extends React.Component {
 		  	</View>
 			<View style={styles.container2}>
 				<Button
-					title="Order"
+					title=" Order"
 					color='white'
-					style={styles.button2}
+					backgroundColor='red'
+					//style={styles.button2}
 					onPress={() => {
 					this.props.navigation.navigate('Order');
 					}}
@@ -56,7 +57,7 @@ class HomeScreen extends React.Component {
 				<Button
 					title="About Us"
 					color='white'
-					style={styles.button2}
+					//style={styles.button2}
 					onPress={() => {this.props.navigation.navigate('AboutUs');}}
 				/>
 			</View>
@@ -136,7 +137,21 @@ class HomeScreen extends React.Component {
 						type='font-awesome'
 						style={{margin: 10}}
 					/>
-			</View>
+					<View style={styles.container3}>
+						<SocialIcon
+							type='twitter'
+						/>
+						<SocialIcon
+							type='facebook'
+						/>
+						<SocialIcon
+							type='youtube'
+						/>
+						<SocialIcon
+							type='steam'
+						/>
+					</View>
+				</View>
 		</ScrollView>
 	  );
 	}
@@ -189,28 +204,56 @@ class HomeScreen extends React.Component {
 				<View //style={styles.container2}
 					backgroundColor='#FFDAAA'
 				>
+					<Card 
+						//title="You can order anothing from our menu"
+					>
+						<Text 
+							style={{margin: 10}}>You can order anything from our menu
+						</Text>
+					</Card>
 					<PricingCard
 						color='green'
 						title='Uber Eats'
-						price='$$'
-						info={['Fast Delivery', '5-star Service']}
+						price='$'
+						info={['Fast Delivery']}
 						button={{ title: ' GET STARTED', icon: 'directions-car' }}
 					/>
 					<PricingCard
 						color='red'
 						title='DoorDash'
 						price='$$'
-						info={['Best Price', 'Reliable']}
+						info={['Best Price']}
 						button={{ title: 'GET STARTED', icon: 'directions-run' }}
 					/>
-				</View>
-					<Icon 
-						size ={20}
-						name='rocket'
-						color="#FFDAAA"
-						type='font-awesome'
-						style={{margin: 10}}
+					<PricingCard
+						color='blue'
+						title='Telephone'
+						price='$$$'
+						info={['5-star Service']}
+						button={{ title: ' GIVE US A CALL!', icon: 'phone' }}
 					/>
+				</View>
+				<Icon 
+					size ={20}
+					name='rocket'
+					color="#FFDAAA"
+					type='font-awesome'
+					style={{margin: 10}}
+				/>
+				<View style={styles.container3}>
+					<SocialIcon
+						type='twitter'
+					/>
+					<SocialIcon
+						type='facebook'
+					/>
+					<SocialIcon
+						type='youtube'
+					/>
+					<SocialIcon
+						type='github'
+					/>
+				</View>
 			</View>
 		</ScrollView>
 	  );
@@ -280,6 +323,20 @@ function ZapApp() {
           color="#FFDAAA"
           type='font-awesome'
           style={{margin: 10}}/>
+		<View style={styles.container3}>
+			<SocialIcon
+				type='twitter'
+			/>
+			<SocialIcon
+				type='facebook'
+			/>
+			<SocialIcon
+				type='youtube'
+			/>
+			<SocialIcon
+				type='instagram'
+			/>
+		</View>
       </ View>
     </ScrollView>
   );
@@ -319,6 +376,14 @@ const styles = StyleSheet.create({
 	margin: 1,
 	padding: 5,
 	backgroundColor: '#AA7939'
+  },
+  container3: {
+    flex: 0,
+    flexDirection: 'row',
+	justifyContent: 'space-around',
+	margin: 1,
+	padding: 5,
+	backgroundColor: '#FFDAAA'
   },
   button2: {
     width: '40%',
